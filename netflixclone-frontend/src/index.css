@@ -1,0 +1,14 @@
+/* @tailwind base; */
+@tailwind utilities;
+
+@import "tailwindcss";
+
+/* Hide scrollbar for all browsers */
+::WebkitScrollbar {
+  display: none;
+}
+
+* {
+  MsOverflowStyle: none;
+  scrollbarWidth: none;
+}
