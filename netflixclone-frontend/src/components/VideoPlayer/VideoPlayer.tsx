@@ -1,4 +1,4 @@
-import {type Movie } from "../../types/movies";
+import { type Movie } from "../../types/movies";
 
 interface Props {
   movie: Movie | null;
@@ -10,25 +10,14 @@ function VideoPlayer({ movie, onClose }: Props) {
 
   return (
     <div className="fixed inset-0 bg-black z-50 flex flex-col">
-
       {/* Close */}
-      <button
-        onClick={onClose}
-        className="text-white text-xl p-4 self-end"
-      >
+      <button onClick={onClose} className="text-white text-xl p-4 self-end">
         ✕
       </button>
 
       {/* Video */}
-      <video
-        controls
-        autoPlay
-        className="w-full h-full object-contain"
-      >
-        <source
-          src={`http://localhost:8080${movie.videoUrl}`}
-          type="video/mp4"
-        />
+      <video controls autoPlay className="w-full h-full object-contain">
+        <source src={movie.videoUrl || ""} type="video/mp4" />
       </video>
     </div>
   );

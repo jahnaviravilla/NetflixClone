@@ -23,7 +23,7 @@ function MovieModal({ movie, onClose, onPlay }: Props) {
 
         {/* Banner */}
         <img
-          src={`http://localhost:8080${movie.bannerUrl}`}
+         src={movie.bannerUrl || movie.imageUrl} alt={movie.title}
           className="rounded-lg mb-4"
         />
 

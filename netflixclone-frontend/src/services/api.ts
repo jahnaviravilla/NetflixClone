@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:8080/api",
+  baseURL: "https://netflixclone-fokx.onrender.com/api",
 });
 
+// Function to get movies
 export const getMovies = () => API.get("/movies");

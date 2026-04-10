@@ -9,14 +9,14 @@ interface Props {
 
 function MovieCard({ movie, onClick, onWatchlist, isInWatchlist }: Props) {
   return (
-    
     <div
       onClick={() => onClick(movie)}
       className="relative group min-w-40 cursor-pointer"
     >
       {/* Image */}
       <img
-        src={`http://localhost:8080${movie.imageUrl}`}
+        src={movie.imageUrl || "https://via.placeholder.com/150"}
+        alt={movie.title}
         className="rounded-lg transition duration-300 group-hover:scale-103"
         // className="rounded-lg transition duration-300 group-hover:scale-110 group-hover:shadow-2xl"
       />
@@ -29,14 +29,14 @@ function MovieCard({ movie, onClick, onWatchlist, isInWatchlist }: Props) {
           ▶ Play
         </button>
         <button
-  onClick={(e) => {
-    e.stopPropagation(); // prevent modal opening
-    onWatchlist(movie);
-  }}
-  className="mt-2 bg-red-600 text-white text-xs px-2 py-1 rounded"
->
-  {isInWatchlist ? "✓ Added" : "+ My List"}
-</button>
+          onClick={(e) => {
+            e.stopPropagation(); // prevent modal opening
+            onWatchlist(movie);
+          }}
+          className="mt-2 bg-red-600 text-white text-xs px-2 py-1 rounded"
+        >
+          {isInWatchlist ? "✓ Added" : "+ My List"}
+        </button>
       </div>
     </div>
   );
